@@ -17,10 +17,11 @@
                     <param id="0" name="Variable">nickname</param>
                     <param id="1" name="Value">TextBox.Text</param>
                 </action>
-                <action id="15" name="Add client input value" sid="739710809803194" type="Multiplayer">
-                    <param id="0" name="Tag">&quot;HOST&quot;</param>
-                    <param id="1" name="Precision">0</param>
-                    <param id="2" name="Interpolation">1</param>
+                <action id="4" name="Log in" sid="672402280756190" type="Multiplayer">
+                    <param id="0" name="Alias">nickname</param>
+                </action>
+                <action id="0" name="Set text" sid="915192337661331" type="MsgText">
+                    <param id="0" name="Text">MsgText.Text &amp; newline &amp; &quot;Entrando...&quot;</param>
                 </action>
             </actions>
         </event-block>
@@ -28,7 +29,37 @@
             <conditions>
                 <condition id="-2" name="On start of layout" sid="610678136373339" type="System" />
             </conditions>
-            <actions />
+            <actions>
+                <action id="1" name="Connect" sid="879439548187420" type="Multiplayer">
+                    <param id="0" name="Server">&quot;wss://multiplayer.scirra.com&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="505423443714557" type="MsgText">
+                    <param id="0" name="Text">&quot;Conectando ao servidor...&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="788911600226129">
+            <conditions>
+                <condition id="7" name="Is connected" sid="864190452520567" type="Multiplayer" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="241783620212272" type="MsgText">
+                    <param id="0" name="Text">&quot;Conectado!&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="391250203622808">
+            <conditions>
+                <condition id="4" name="On logged in" sid="954270256709683" type="Multiplayer" />
+            </conditions>
+            <actions>
+                <action id="5" name="Join room" sid="254454360201216" type="Multiplayer">
+                    <param id="0" name="Game">&quot;MyGame&quot;</param>
+                    <param id="1" name="Instance">&quot;sala1&quot;</param>
+                    <param id="2" name="Room">&quot;lobby&quot;</param>
+                    <param id="3" name="Max peers">4</param>
+                </action>
+            </actions>
         </event-block>
     </events>
 </c2eventsheet>
