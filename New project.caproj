@@ -17,8 +17,13 @@
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
     </used-plugins>
-    <used-behaviors />
-    <used-effects />
+    <used-behaviors>
+        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
+    </used-behaviors>
+    <used-effects>
+        <effect author="Scirra" id="tint">Tint</effect>
+    </used-effects>
     <configurations>
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
     </configurations>
@@ -28,6 +33,7 @@
     </window-size>
     <pixel-rounding>0</pixel-rounding>
     <preview-effects>1</preview-effects>
+    <first-layout>Game</first-layout>
     <use-loader-layout>0</use-loader-layout>
     <configuration-settings>
         <prop name="Clear background">Yes</prop>
@@ -91,16 +97,61 @@
         <object-type name="MsgText" sid="938644453596349">
             <plugin id="Text" />
         </object-type>
+        <object-type name="Debug" sid="785613370039723">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Player" sid="845429794539191">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="id" sid="944432858546307" type="string" />
+                <instance-variable name="dx" sid="725473867829644" type="number" />
+                <instance-variable name="dy" sid="945328788221151" type="number" />
+                <instance-variable name="name" sid="824435105382367" type="string" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="8Direction" sid="966995667690309">
+                    <behavior id="EightDir" />
+                </behavior-type>
+                <behavior-type name="BoundToLayout" sid="682603821617877">
+                    <behavior id="bound" />
+                </behavior-type>
+            </behaviors>
+            <effects>
+                <effect-type name="Tint">
+                    <effect id="tint" />
+                </effect-type>
+            </effects>
+            <container>
+                <type>Player</type>
+                <type>NameTxt</type>
+            </container>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="236935977171280" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="FundoLogin" sid="593569230122734">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="372225678899503" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="NameTxt" sid="488169058261860">
+            <plugin id="Text" />
+            <container>
+                <type>Player</type>
+                <type>NameTxt</type>
+            </container>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
-        <layout>Layout 1.xml</layout>
-        <layout>Layout 2.xml</layout>
-        <layout>Layout 3.xml</layout>
+        <layout>Game.xml</layout>
     </layout-folder>
     <event-folder>
-        <event-sheet>Event sheet 1.xml</event-sheet>
-        <event-sheet>Event sheet 2.xml</event-sheet>
         <event-sheet>Event sheet 3.xml</event-sheet>
     </event-folder>
     <global-instances>
