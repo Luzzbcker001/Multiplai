@@ -44,7 +44,7 @@
         <prop name="Orientations">Landscape</prop>
         <prop name="Pause on unfocus">No</prop>
         <prop name="Physics engine">Box2D asm.js</prop>
-        <prop name="Preview browser">(default)</prop>
+        <prop name="Preview browser">Chrome</prop>
         <prop name="Sampling">Linear</prop>
         <prop name="Use high-DPI display">Yes</prop>
     </configuration-settings>
@@ -107,6 +107,8 @@
                 <instance-variable name="dx" sid="725473867829644" type="number" />
                 <instance-variable name="dy" sid="945328788221151" type="number" />
                 <instance-variable name="name" sid="824435105382367" type="string" />
+                <instance-variable name="pontos" sid="479088639394952" type="number" />
+                <instance-variable name="freio" sid="787508121209410" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="8Direction" sid="966995667690309">
@@ -146,8 +148,33 @@
                 <type>NameTxt</type>
             </container>
         </object-type>
+        <object-type name="Sprite4" sid="458425320506990">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="829273570553418" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\ALUNO\Downloads\New Piskel-1.png.png">
+                        <collision-poly>
+                            <point x="0.153226" y="0.153226" />
+                            <point x="0.5" y="0.00806452" />
+                            <point x="0.846774" y="0.153226" />
+                            <point x="0.991935" y="0.5" />
+                            <point x="0.846774" y="0.846774" />
+                            <point x="0.5" y="0.991935" />
+                            <point x="0.153226" y="0.846774" />
+                            <point x="0.00806452" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
-    <families />
+    <families>
+        <family name="Alvo" plugin-id="Sprite" sid="199976855522949">
+            <members>
+                <member>Player</member>
+            </members>
+        </family>
+    </families>
     <layout-folder>
         <layout>Game.xml</layout>
     </layout-folder>
